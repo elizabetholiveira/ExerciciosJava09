@@ -50,6 +50,22 @@ public class Professores extends Funcionarios{
 
     //----------
 
+    public List adicionaEstagiario(int estagiarios){
+        System.out.println("Digite 's' para adicionar um estagiario");
+        String selecao = resposta.next();
+        List<String> estagiariosSupervisionados = new ArrayList<>();
+        if (selecao.equalsIgnoreCase("s") && (estagiarios <= 2)) {
+            estagiarios = estagiarios + 1;
+            System.out.println("Qual o nome do estagiário?");
+            String nomeEstagiario = resposta.nextLine();
+            resposta.nextLine();
+            estagiariosSupervisionados.add(nomeEstagiario);
+        }
+        return estagiariosSupervisionados;
+    }
+
+    //---------
+
     @Override
     public double reembolsoDeDespesas(double reembolso) {
         return super.reembolsoDeDespesas(reembolso);
